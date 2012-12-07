@@ -28,6 +28,9 @@
 # sys.status()
 # parent.frame()
 
+# WHERE ARE LIBRARIES STORED
+# .libPaths()
+
 # USEFUL SHORTHAND
 # evalq()       -> eval(quate(expr), ...)
 # eval.parent() -> eval(expr, parent.frame(n))
