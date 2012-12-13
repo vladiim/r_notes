@@ -17,3 +17,5 @@ v[index, ]
 # calculate the logical vector from the vector itself
 index <- v$value[value < 30]
 
+# ATTRIBUTES
+attributes()
