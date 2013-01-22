@@ -1,3 +1,6 @@
+# load R file into env
+# source('dir/to/file.R')
+
 # GLOBAL ENV
 # assign()
 # get()

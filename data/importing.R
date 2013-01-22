@@ -17,8 +17,6 @@ Files From Other Software
 
 # Often I will have Excel files, SPSS files, or SAS dataset set to me.  Once again I can either export the data as a csv file and then import using the read.csv function.  However, taking that approach every time means that there is an additional step.  By adding unnecessary steps to a process increases the risk that the data might get corrupted due to human error.  Furthermore, if the data is updated from time to time then the data that you downloaded last week may not have the most current data.
 
- 
-
 # SPSS
 library(foreign)
 file <- "C:\\my_folder\\my_file.sav"
@@ -130,3 +128,6 @@ url <- "http://open.mapquestapi.com/geocoding/v1/address?location=1600%20Pennsyl
 raw_json <- scan(url, "", sep="\n")
  
 mygeo <- fromJSON(raw_json)
+
+# READ ANYTHING
+blah <- readBin("/Users/data.wtf", what="numeric")

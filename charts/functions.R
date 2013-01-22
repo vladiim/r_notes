@@ -1,0 +1,38 @@
+plot()             
+matplot()             
+pairs()             
+barplot()             
+pi()             
+dotchart()             
+coplot()             
+cdplot()             
+mosaicplot()             
+spineplot()             
+persp()             
+image()             
+contour()             
+heatmap()             
+hist()             
+qqnorm()             
+qqplot()             
+boxplot()             
+bxp()             
+
+# ADDING GRAPHIS TO AN EXSISTING CHART
+
+points()
+curve() 
+lines() 
+text()
+abline()
+grid()
+polygon()
+rect()
+segments() # set of line segments from each pair of vertices specified from (x[i],y[i]) to (z[i],a[i])
+legend()
+title()
+axis()
+box()      # draw box around current figure region
+
+# eg you can add a square pattern behind a chart with abline(h=1:10,v=1:10) 
+
