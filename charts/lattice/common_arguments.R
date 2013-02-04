@@ -83,4 +83,32 @@ index.cond 				# list of a func that can subset or reorder array of conditioning
 
 relation 				# how limits are calculated for each panel ='same' ='free' ='sliced'
 
-tick.number 
+tick.number             # number of tick markers
+
+draw 					# logical - draw axis?
+
+alternating 			# logical, alternate axis locations between panels
+
+limits 					# limits for each axis
+
+at 						# numeric vector - where to plot tick marks 
+
+labels 					# labels to accompany `at` (above)
+
+cex 					# numeric that controls axis size
+
+font/fontface/fontfamily
+
+tck 					# numeric - size of tick marks 
+
+col  					# color of tick marks 
+
+rot 					# number - angle of rotation of axis labels
+
+minlength 				# passed to abbreviate()
+
+log 					# func - transform data to log scale 
+
+format 					# see strptime for info
+
+axs 					# ='r' to pad date values, ='i' for exact values

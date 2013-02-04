@@ -18,6 +18,18 @@ library('nutshell')
 # contour
 # persp
 
+# get value of a setting
+trellis.par.get('axis.text')
+
+# all settings text
+trellis.par.get()
+
+# all settings as graphic
+show.settings()
+
+# change a value of a setting
+trellis.par.set(list(axis.text=list(cex=0.5)))
+
 simple.data <- function() {
   data.frame(x=c(0:9), y=c(1:10), z=rep(c('a', 'b'), times=5));
 }
