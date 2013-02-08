@@ -6,6 +6,11 @@ name.last  <- c("Manning", "Brady", "Pepper", "Palmer", "Manning")
 name.first <- c("Peyton", "Tom", "Julius", "Carson", "Eli")
 top.5      <- data.frame(name.last, name.first, team, position, salary)
 
+# PACKAGE
+library('package')
+data(packageData)
+data() # see the datasets in a package
+
 # RDATA
 # load("~/top.5")
 # load("~/top.5.RData")
