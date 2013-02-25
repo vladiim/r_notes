@@ -275,3 +275,80 @@ succ.fail.by.stadium <- function() {
   good_bad_table <- t(full_table[3:4,]);
   prop.test(good_bad_table);
 }
+
+# COMPARE 2 TABLES OF DATA 
+
+# fisher
+# for small sets the best tool is fisher.test()
+# high p-value implies the variables are likely to be independent
+# low p-value implies not independent
+
+# chi-squared
+# different to fisher in that you need to state a hypothesis then compare sample to hypothesis
+
+load.births <- function() {
+  data(births2006.smpl);
+  births2006.smpl;
+}
+
+july.births <- function() {
+  data <- load.births();
+  data[data$DMETH_REC!='Unknown' & data$DOB_MM==7, ];
+}
+
+twin.births <- function() {
+  data <- load.births();
+  data[data$DPLURAL=='2 Twin' & data$DMETH_REC != 'Unknown',];
+}
+
+method.and.sex.data <- function(data) {
+  table(data$SEX, as.factor(as.character(data$DMETH_REC)));
+}
+
+fisher.delivery.v.sex <- function(data) {
+  method.and.sex <- method.and.sex.data(data);
+  fisher.test(method.and.sex);  
+}
+
+fisher.delivery.v.sex.july <- function() {
+  data <- july.births();
+  fisher.delivery.v.sex(data)
+} # p-value = v low, therefore variables are not independent
+
+fisher.delivery.v.sex.twins <- function() {
+  data <- twin.births();
+  fisher.delivery.v.sex(data)
+}
+
+chi.delivery.v.sex.twins <- function() {
+  data <- twin.births();
+  method.and.sex <- method.and.sex.data(data);
+  chisq.test(method.and.sex);
+}
+
+# HOW MANY BABIES BORN ON W'ENDS VS W'DAYS?
+
+births.by.day <- function() {
+  data <- load.births();
+  table(data$DOB_WK);
+}
+
+births.by.day.and.month <- function() {
+  data <- load.births();
+  table(data$DOB_WK, data$DOB_MM);
+}
+
+chi.births.by.day <- function() {
+  chisq.test(births.by.day());
+}
+
+chi.births.by.day.and.month <- function() {
+  chisq.test(births.by.day.and.month());
+}
+
+# 3D TEST
+# mantelhaen.test()
+# mcnemar.test()
+
+# NON-PARAMETIC TABULAR DATA TEST
+# friedman.test
