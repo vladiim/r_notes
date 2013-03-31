@@ -1,3 +1,6 @@
+# http://rseek.org/
+# http://crantastic.org/
+
 # help(glm)
 # ?glm
 # ?'+'
