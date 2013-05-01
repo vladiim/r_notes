@@ -98,3 +98,29 @@ spam.qda.check.w.training <- function() {
 # ------------------------------
 
 # loglin uses iterative proportional fitting (IPF)
+
+# ------------------------------
+# BINNING
+# ------------------------------
+
+library(data.table)
+data(movies, package='ggplot2')
+library(lattice)
+ 
+movies <- data.table(movies)
+ 
+nBins <- 500
+ 
+## 2D Binning
+movies[, c('ratBin', 'votesBin'):=list(floor(rating/nBins), floor(votes/nBins))]
+setkey(movies, ratBin, votesBin)
+## Cross Join (as expand.grid) ...
+bins <- CJ(0:nBins, 0:nBins)
+## ... used to extract records from movies corresponding to each 2D bin
+movies2 <- movies[bins, list(.N, rating, votes), nomatch=0]
+## Finally aggregate with mean
+movies3 <- movies2[,lapply(.SD, mean),
+                   by=list(ratBin, votesBin)]
+ 
+xyplot(votes ~ rating, data=movies3, cex=asinh(movies3$N)/5,
+       alpha=0.6, pch=21, fill='blue', col='black')
