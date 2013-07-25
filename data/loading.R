@@ -1,3 +1,6 @@
+# What's in a data.frame?
+str(data)
+
 # MANUAL
 salary     <- c(1870000, 14626720, 14137500, 13980000, 12916666)
 position   <- c("QB", "QB", "DE", "QB", "QB")
